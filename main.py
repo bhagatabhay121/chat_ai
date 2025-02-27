@@ -155,181 +155,189 @@ MDFloatLayout:
                         icon: "bell"
                         pos_hint: {"center_x":.85,"center_Y":.5}
 
-                
-
-                MDCard:
-                    size_hint: None, None
-                    pos_hint:{"center_x":.5,"center_y": .84}
-                    size_hint: 0.9,.08
-                    elevation: 1.5
-                    radius: [10,]
-                    border_radius: 10
-
-                    TextInput:
-                        id: profile_search
-                        hint_text: "Search Profile ..."
-                        helper_text: "Please Enter Correct Username"
-                        size_hint: .7,None
-                        mode: "fill"
-                        pos_hint:{"center_x": .45,"center_y": .5}
-                        height: self.minimum_height
-                        multiline: False
-                        cursor_color: 0,0,0,1
-                        cursor_width:"2sp"
-                        background_color: 0,0,0,0
-                        padding: 15
-                        font_size: "18sp" 
-                        normal_color: app.theme_cls.bg_light
-                        color_active: app.theme_cls.bg_light
-                        icon_left: "magnify"
-                        foreground_color: app.theme_cls.secondary_text_color
-
-                    MDIconButton:
-                        id: clo
-                        icon: "close"
-                        pos_hint:{"center_x":.85,"center_y":.5}
-                        on_release:app.clear()
-
-                    MDIconButton:
-                        icon: "magnify"
-                        pos_hint:{"center_x":.85,"center_y":.5}
-
                 ScrollView:
-                    do_scroll_x:True
-                    size_hint_y:.4
-                    pos_hint: {"center_y":.58}
-                    bar_width:0
-                    GridLayout:
-                        size_hint_x: None
+                    size_hint:1,.88
+                    MDBoxLayout:
+                        orientation: "vertical"
+                        size_hint_y: None
                         height: self.minimum_height
-                        width: self.minimum_width
-                        rows: 1
-                        spacing: 20
-                        padding:20,0
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                        spacing: dp(10)
+                        padding: dp(10)
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                        MDCard:
+                            size_hint: None, None
+                            pos_hint:{"center_x":.5,"center_y": .84}
+                            size_hint: 0.9,.08
+                            elevation: 2
+                            radius: [10,]
+                            border_radius: 10
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                            TextInput:
+                                id: profile_search
+                                hint_text: "Search Profile ..."
+                                helper_text: "Please Enter Correct Username"
+                                size_hint: .7,None
+                                mode: "fill"
+                                pos_hint:{"center_x": .45,"center_y": .5}
+                                height: self.minimum_height
+                                multiline: False
+                                cursor_color: 0,0,0,1
+                                cursor_width:"2sp"
+                                background_color: 0,0,0,0
+                                padding: 15
+                                font_size: "18sp" 
+                                normal_color: app.theme_cls.bg_light
+                                color_active: app.theme_cls.bg_light
+                                icon_left: "magnify"
+                                foreground_color: app.theme_cls.secondary_text_color
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                            MDIconButton:
+                                id: clo
+                                icon: "close"
+                                pos_hint:{"center_x":.85,"center_y":.5}
+                                on_release:app.clear()
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                            MDIconButton:
+                                icon: "magnify"
+                                pos_hint:{"center_x":.85,"center_y":.5}
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                        ScrollView:
+                            do_scroll_x: True
+                            do_scroll_y: False
+                            size_hint_y: None
+                            height: "100dp"
 
-                        Image:
-                            source:"topbarlogo.png"
-                            size_hint: None,None
-                            size: "65dp", "65dp"
+                            MDBoxLayout:
+                                id: story_grid
+                                orientation: "horizontal"
+                                size_hint_x: None
+                                width: self.minimum_width
+                                spacing: dp(10)
+                                padding: dp(10)
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
 
-                ScrollView:
-                    size_hint_y: .65
-                    MDList:
-                        divider: "Inset"
-                        divider_color:1,1,1,1
-                        radius: [25,0,0,0]
-                        TwoLineAvatarIconListItem:
-                            id:home_name
-                            text: "Abhay"
-                            secondary_text: "Secondary text here"
-                            on_release:app.change()
-                            ImageLeftWidget:
-                                id:home_image
-                                source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-                                radius: 24
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
 
-                            IconRightWidget:
-                                icon: 'dots-vertical'
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
 
-                        TwoLineAvatarIconListItem:
-                            id:home_name
-                            text: "Abhay"
-                            secondary_text: "Secondary text here"
-                            on_release:app.change()
-                            ImageLeftWidget:
-                                id:home_image
-                                source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-                                radius: 24
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
 
-                            IconRightWidget:
-                                icon: 'dots-vertical'
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
+
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
+
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
+
+                                Image:
+                                    source:"topbarlogo.png"
+                                    size_hint: None,None
+                                    size: "65dp", "65dp"
 
                 
-                        TwoLineAvatarIconListItem:
-                            id:home_name
-                            text: "Abhay"
-                            secondary_text: "Secondary text here"
-                            on_release:app.change()
-                            ImageLeftWidget:
-                                id:home_image
-                                source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-                                radius: 24
+                        MDList:
+                            divider: "Inset"
+                            divider_color:1,1,1,1
+                            radius: [25,0,0,0]
+                            TwoLineAvatarIconListItem:
+                                id:home_name
+                                text: "Abhay"
+                                secondary_text: "Secondary text here"
+                                on_release:app.change()
+                                ImageLeftWidget:
+                                    id:home_image
+                                    source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+                                    radius: 24
 
-                            IconRightWidget:
-                                icon: 'dots-vertical'
+                                IconRightWidget:
+                                    icon: 'dots-vertical'
 
-                        TwoLineAvatarIconListItem:
-                            id:home_name
-                            text: "Abhay"
-                            secondary_text: "Secondary text here"
-                            on_release:app.change()
-                            ImageLeftWidget:
-                                id:home_image
-                                source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-                                radius: 24
+                            TwoLineAvatarIconListItem:
+                                id:home_name
+                                text: "Abhay"
+                                secondary_text: "Secondary text here"
+                                on_release:app.change()
+                                ImageLeftWidget:
+                                    id:home_image
+                                    source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+                                    radius: 24
 
-                            IconRightWidget:
-                                icon: 'dots-vertical'
+                                IconRightWidget:
+                                    icon: 'dots-vertical'
 
-                        TwoLineAvatarIconListItem:
-                            id:home_name
-                            text: "Abhay"
-                            secondary_text: "Secondary text here"
-                            on_release:app.change()
-                            ImageLeftWidget:
-                                id:home_image
-                                source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-                                radius: 24
+                    
+                            TwoLineAvatarIconListItem:
+                                id:home_name
+                                text: "Abhay"
+                                secondary_text: "Secondary text here"
+                                on_release:app.change()
+                                ImageLeftWidget:
+                                    id:home_image
+                                    source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+                                    radius: 24
 
-                            IconRightWidget:
-                                icon: 'dots-vertical'
+                                IconRightWidget:
+                                    icon: 'dots-vertical'
 
-                        TwoLineAvatarIconListItem:
-                            id:home_name
-                            text: "Abhay"
-                            secondary_text: "Secondary text here"
-                            on_release:app.change()
-                            ImageLeftWidget:
-                                id:home_image
-                                source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
-                                radius: 24
+                            TwoLineAvatarIconListItem:
+                                id:home_name
+                                text: "Abhay"
+                                secondary_text: "Secondary text here"
+                                on_release:app.change()
+                                ImageLeftWidget:
+                                    id:home_image
+                                    source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+                                    radius: 24
 
-                            IconRightWidget:
-                                icon: 'dots-vertical'
+                                IconRightWidget:
+                                    icon: 'dots-vertical'
+
+                            TwoLineAvatarIconListItem:
+                                id:home_name
+                                text: "Abhay"
+                                secondary_text: "Secondary text here"
+                                on_release:app.change()
+                                ImageLeftWidget:
+                                    id:home_image
+                                    source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+                                    radius: 24
+
+                                IconRightWidget:
+                                    icon: 'dots-vertical'
+
+                            TwoLineAvatarIconListItem:
+                                id:home_name
+                                text: "Abhay"
+                                secondary_text: "Secondary text here"
+                                on_release:app.change()
+                                ImageLeftWidget:
+                                    id:home_image
+                                    source: "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=A63koPKaCyIwQWOTFBRWXj_PwCrR4cEoOw2S9Q7yVl8="
+                                    radius: 24
+
+                                IconRightWidget:
+                                    icon: 'dots-vertical'
 
 
                 MDIconButton:
